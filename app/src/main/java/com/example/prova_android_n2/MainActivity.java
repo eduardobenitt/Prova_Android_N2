@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,7 +21,9 @@ public class MainActivity extends AppCompatActivity {
 
     EditText edEmail, edSenha;
 
-    Button btLogar, btRecuperaSenha, btUser;
+    Button btLogar;
+
+    TextView tvUser, tvSenha;
 
     FirebaseAuth mAuth;
 
@@ -32,27 +35,14 @@ public class MainActivity extends AppCompatActivity {
         edEmail= findViewById(R.id.editTextEmail);
         edSenha = findViewById(R.id.editTextSenha);
 
+        tvUser = findViewById(R.id.tvCriaUser);
+        tvSenha = findViewById(R.id.tvEsqueciSenha);
+
+
         btLogar = findViewById(R.id.botaoLogin);
-        btRecuperaSenha = findViewById(R.id.botaoRecuperaSenha);
-        btUser = findViewById(R.id.botaoCriaUser);
+
 
         mAuth = FirebaseAuth.getInstance();
-
-
-        btRecuperaSenha.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String email = edEmail.getText().toString();
-                //enviar email para recuperação de senha
-                mAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful())
-                            Toast.makeText(MainActivity.this, "Email de recuperação de senha enviado.", Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
-        });
 
 
         btLogar.setOnClickListener(new View.OnClickListener() {
@@ -83,25 +73,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btUser.setOnClickListener(new View.OnClickListener() {
+        tvSenha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email = edEmail.getText().toString();
-                String senha = edSenha.getText().toString();
-                //cria usuário
-                mAuth.createUserWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            FirebaseUser usuario = FirebaseAuth.getInstance().getCurrentUser();
-                            usuario.sendEmailVerification();
 
-                            Toast.makeText(MainActivity.this, "Usuário criado. Verifique seu e-mail.", Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(MainActivity.this, "Usuário NÃO foi criado.", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+                Intent intent = new Intent(MainActivity.this, MainActivity3.class);
+                startActivity(intent);
+            }
+        });
+
+        tvUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, MainActivity4.class);
+                startActivity(intent);
+
             }
         });
 
