@@ -62,8 +62,8 @@
 
     <Button
         android:id="@+id/botaoLogin"
-        android:layout_width="379dp"
-        android:layout_height="wrap_content"
+        android:layout_width="358dp"
+        android:layout_height="47dp"
         android:layout_marginTop="356dp"
         android:layout_marginEnd="4dp"
         android:backgroundTint="#4CB67B"
