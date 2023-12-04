@@ -18,13 +18,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
-
     EditText edEmail, edSenha;
-
     Button btLogar;
-
     TextView tvUser, tvSenha;
-
     FirebaseAuth mAuth;
 
     @Override
@@ -34,16 +30,10 @@ public class MainActivity extends AppCompatActivity {
 
         edEmail= findViewById(R.id.editTextEmail);
         edSenha = findViewById(R.id.editTextSenha);
-
         tvUser = findViewById(R.id.tvCriaUser);
         tvSenha = findViewById(R.id.tvEsqueciSenha);
-
-
         btLogar = findViewById(R.id.botaoLogin);
-
-
         mAuth = FirebaseAuth.getInstance();
-
 
         btLogar.setOnClickListener(new View.OnClickListener() {
             @Override
