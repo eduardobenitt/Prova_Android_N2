@@ -4,26 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     tools:context=".MainActivity3">
-
-    <EditText
-        android:id="@+id/eTextEmail"
-        android:layout_width="272dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="104dp"
-        android:layout_marginEnd="92dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="248dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="276dp"
         android:text="Informe seu e-mail"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,9 +23,43 @@
         android:id="@+id/btEnviarEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="304dp"
-        android:layout_marginEnd="276dp"
+        android:layout_marginTop="196dp"
+        android:layout_marginEnd="304dp"
         android:text="Enviar"
+        android:backgroundTint="#FF0000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="379dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="12dp"
+        android:hint="E-mail"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="#FF0000"
+        app:boxStrokeWidth="2dp"
+        app:hintTextColor="#FF0000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/eTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/user"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/white"
+            android:textColorHighlight="#FF0000"
+            android:textColorHint="#FF0000"
+            android:textColorLink="#FF0000"
+            app:boxStrokeColor="#FF0000"
+            app:boxStrokeWidthFocused="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

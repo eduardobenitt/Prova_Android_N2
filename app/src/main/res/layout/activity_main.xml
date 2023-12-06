@@ -14,23 +14,29 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="164dp"
         android:hint="E-mail"
-        app:boxStrokeColor="@android:color/white"
-        android:textColor="#FFFFFF"
-        app:hintTextColor="@android:color/white"
-        android:textColorHint="#FFFFFF"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="#FF0000"
+        app:boxStrokeWidth="2dp"
+        app:hintTextColor="#FF0000"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="13dp">
+        tools:layout_editor_absoluteX="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/user"
             android:inputType="textEmailAddress"
-            app:boxStrokeColor="@android:color/white"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorHint="@color/white"
+            android:textColorLink="@color/white"
+            app:boxStrokeColor="@color/white"
+            app:boxStrokeWidthFocused="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -39,23 +45,24 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="248dp"
+        android:layout_marginTop="284dp"
         android:hint="Senha"
-        app:boxStrokeColor="@android:color/white"
         android:textColor="#FFFFFF"
-        app:hintTextColor="@android:color/white"
         android:textColorHint="#FFFFFF"
+        app:boxStrokeColor="#FF0000"
+        app:hintTextColor="#FF0000"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="13dp">
+        tools:layout_editor_absoluteX="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextSenha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/teste"
             android:inputType="textPassword"
-            app:boxStrokeColor="@android:color/white"
             android:textColor="#FFFFFF"
             android:textColorHint="#FFFFFF"
+            app:boxStrokeColor="@android:color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -64,12 +71,12 @@
         android:id="@+id/botaoLogin"
         android:layout_width="358dp"
         android:layout_height="47dp"
-        android:layout_marginTop="356dp"
-        android:layout_marginEnd="4dp"
-        android:backgroundTint="#4CB67B"
+        android:layout_marginTop="404dp"
+        android:backgroundTint="#FF0000"
         android:text="LOGIN"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -77,8 +84,8 @@
         android:layout_width="105dp"
         android:layout_height="26dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="464dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginTop="492dp"
+        android:layout_marginEnd="68dp"
         android:text="Esqueci a senha"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,12 +96,22 @@
         android:layout_width="92dp"
         android:layout_height="27dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="464dp"
-        android:layout_marginEnd="248dp"
+        android:layout_marginTop="492dp"
+        android:layout_marginEnd="264dp"
         android:text="Criar usuário"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="160dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/netflix" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
