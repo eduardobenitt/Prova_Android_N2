@@ -45,14 +45,14 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="376dp"
         android:layout_height="64dp"
-        android:layout_marginTop="228dp"
+        android:layout_marginTop="244dp"
         android:hint="Senha"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:boxStrokeColor="#FF0000"
         app:hintTextColor="#FF0000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
