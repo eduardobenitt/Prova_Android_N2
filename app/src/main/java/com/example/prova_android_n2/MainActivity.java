@@ -1,15 +1,16 @@
 package com.example.prova_android_n2;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -40,17 +41,29 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String email = edEmail.getText().toString();
                 String senha = edSenha.getText().toString();
-                //login + verifica (e envia) email
+
+
+                if (email.equals("") || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    edEmail.setError("Preencha corretamente");
+                    edEmail.requestFocus();
+                    return;
+                }
+
+                if (senha.equals("")) {
+                    edSenha.setError("Preencha corretamente");
+                    edSenha.requestFocus();
+                    return;
+                }
                 mAuth.signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+
                         if (task.isSuccessful()) {
-                            //verificar usuário logado
                             FirebaseUser usuario = FirebaseAuth.getInstance().getCurrentUser();
                             Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                             startActivity(intent);
                             if (usuario.isEmailVerified()) {
-                                // Toast.makeText(MainActivity.this, "Usuário logado.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Usuário logado.", Toast.LENGTH_SHORT).show();
                             } else {
                                 // Toast.makeText(MainActivity.this, "Usuário não verificado. Verifique seu e-mail.", Toast.LENGTH_SHORT).show();
                             }
@@ -60,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
+
             }
         });
 

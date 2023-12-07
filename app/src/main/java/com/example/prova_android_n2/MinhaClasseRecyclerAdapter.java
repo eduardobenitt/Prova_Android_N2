@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -132,6 +133,29 @@ class MinhaClasseRecyclerAdapter extends RecyclerView.Adapter<MinhaClasseRecycle
     @Override
     public int getItemCount() {
         return moviesArrayList.size();
+    }
+
+    public void filtrar(String text) {
+        //limpando array que monta a lista ao buscar algum termo na searchView
+        moviesArrayList.clear();
+
+        //digitou algo e apagou = trazer todos
+        //lembrando que filmeArrayListCopia contém toda a informação original
+        //(populado no construtor)
+        if (text.isEmpty()) {
+            moviesArrayList.addAll(moviesArrayListCopia);
+        } else {
+            //algum texto digitado na busca
+            //converte para letra minúscula para não haver distinção
+            text = text.toLowerCase();
+            //percorre o array com os dados originais (todos os favoritos)
+            for (Movie item : moviesArrayListCopia) {
+                //caso, nos dados originais, exista o termo procurado, popule o array vazio com o item
+                if (item.getTitle().toLowerCase().contains(text) || item.getRelease_date().toLowerCase().contains(text)) {
+                    moviesArrayList.add(item);
+                }
+            }
+        }
     }
 
 }

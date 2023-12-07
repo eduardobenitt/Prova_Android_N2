@@ -1,13 +1,16 @@
 package com.example.prova_android_n2;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.SearchView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,6 +30,7 @@ public class MainActivity2 extends AppCompatActivity {
     MinhaClasseRecyclerAdapter minhaClasseRecyclerAdapter;
     RecyclerView recyclerView;
     SearchView searchView_;
+    Button btFav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,16 +40,21 @@ public class MainActivity2 extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         searchView_ = findViewById(R.id.searchView);
 
-        //searchView aberto
-        searchView_.setIconified(false);
-        //retira o foco automático e fecha o teclado ao iniciar a aplicação
-        searchView_.clearFocus();
-        // Configuração do RecyclerView e Adapter
-        configurarAdapter();
+        btFav = findViewById(R.id.botaoFavoritos);
 
-        // Chamada para buscar e processar dados da API
+
+        searchView_.setIconified(false);
+        searchView_.clearFocus();
+        configurarAdapter();
         String query = "https://api.themoviedb.org/3/discover/movie?api_key=673b69ec0f095b0b5a832990ad639b97&language=pt-BR&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate";
         buscarDadosAPI(query);
+
+        btFav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity2.this, MainActivity5.class));
+            }
+        });
     }
 
     private void configurarAdapter() {
