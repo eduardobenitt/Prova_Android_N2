@@ -12,25 +12,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:layout_marginEnd="276dp"
-        android:text="Informe seu e-mail"
+        android:layout_marginEnd="268dp"
+        android:text="Informe seu e-mail:"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.698" />
 
     <Button
         android:id="@+id/btEnviarEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="196dp"
-        android:layout_marginEnd="304dp"
-        android:text="Enviar"
         android:backgroundTint="#FF0000"
+        android:text="Enviar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="379dp"
         android:layout_height="61dp"

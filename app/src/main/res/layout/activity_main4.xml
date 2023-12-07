@@ -74,10 +74,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="380dp"
-        android:layout_marginEnd="256dp"
-        android:text="Cadastrar"
         android:backgroundTint="#FF0000"
+        android:text="Cadastrar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -86,10 +86,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="136dp"
-        android:text="Cadastre Seu Usuário"
+        android:layout_marginEnd="248dp"
+        android:text="Preencha os dados:"
         android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.792" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

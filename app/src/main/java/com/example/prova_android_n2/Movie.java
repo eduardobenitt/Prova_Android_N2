@@ -54,6 +54,7 @@ public class Movie {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", poster_path='" + poster_path + '\'' +
+                ", release_date='" + release_date + '\'' +
                 '}';
     }
 }
